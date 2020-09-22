@@ -15,7 +15,7 @@ schemes:
   - https
 paths:
   /platform/oauth/connect:
-    post:
+    get:
       tags:
         - oauth
       summary: 获取授权码(code)
