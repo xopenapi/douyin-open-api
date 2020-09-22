@@ -1,0 +1,81 @@
+swagger: "2.0"
+info:
+  description: "douyin open api"
+  version: 1.0.0
+  title: 抖音开放API
+  license:
+    name: Apache-2.0
+    url: "https://www.apache.org/licenses/LICENSE-2.0.html"
+host: open.douyin.com
+basePath: /
+tags:
+  - name: oauth
+    description: oauth
+schemes:
+  - https
+paths:
+  /connect:
+    post:
+      tags:
+        - oauth
+      summary: 获取授权码(code)
+      description: 获取授权码(code)
+      operationId: connect
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: ""
+          required: true
+          schema:
+            $ref: "#/definitions/ConnectReq"
+      responses:
+        "200":
+          description: successful operation
+          schema:
+            $ref: "#/definitions/APIResponse"
+definitions:
+  ConnectReq:
+    type: object
+    properties:
+      client_key:
+        type: string
+        description: 应用唯一标识
+      response_type:
+        type: string
+        description: 填写code
+      scope:
+        type: string
+        description: 应用授权作用域,多个授权作用域以英文逗号（,）分隔
+      optionalScope:
+        type: string
+        description: 应用授权可选作用域,多个授权作用域以英文逗号（,）分隔，每一个授权作用域后需要加上一个是否默认勾选的参数，1为默认勾选，0为默认不勾选
+      redirect_uri:
+        type: string
+        description: 授权成功后的回调地址，必须以http/https开头。域名必须对应申请应用时填写的域名，如不清楚请联系应用申请人。
+      state:
+        type: string
+        description: 用于保持请求和回调的状态
+  APIResponse:
+    title: APIResponse
+    description: ""
+    properties:
+      data:
+        type: object
+        properties:
+          description:
+            type: string
+          error_code:
+            type: integer
+            format: int32
+      extra:
+        type: object
+        properties:
+          logid:
+            type: string
+          now:
+            type: integer
+            format: int64
