@@ -1,0 +1,5 @@
+video:
+     方法         接口                  权限           测试
+    POST /video/part/init/       video.create       postman
+    POST /video/part/init/       video.create       postman
+
