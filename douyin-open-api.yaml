@@ -852,15 +852,10 @@ paths:
           type: string
           description: 调用/oauth/access_token/生成的token，此token需要用户授权。
           required: true
-        - in: body
-          name: body
-          schema:
-            properties:
-              video:
-                type: array
-                items:
-                  type: string
-                  format: byte
+        - in: formData
+          name: video
+          type: file
+          required: true
       responses:
         "200":
           description: successful operation
@@ -874,7 +869,7 @@ paths:
       description: 创建头条视频
       operationId: toutiao_video_create
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -941,7 +936,7 @@ paths:
       description: 头条分片初始化上传
       operationId: toutiao_video_part_init
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -993,15 +988,10 @@ paths:
           format: int64
           description: 第几个分片，从1开始
           required: true
-        - in: body
-          name: body
-          schema:
-            properties:
-              video:
-                type: array
-                items:
-                  type: string
-                  format: byte
+        - in: formData
+          name: video
+          type: file
+          required: true
       responses:
         "200":
           description: successful operation
@@ -1015,7 +1005,7 @@ paths:
       description: 头条视频分片完成上传
       operationId: toutiao_video_part_complete
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -1047,7 +1037,7 @@ paths:
       description: 查询授权账号视频数据
       operationId: toutiao_video_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -1086,7 +1076,7 @@ paths:
       description: 查询头条指定视频数据
       operationId: toutiao_video_data
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
