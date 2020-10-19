@@ -752,7 +752,7 @@ paths:
       description: 获取share-id
       operationId: douyin_video_share_id
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -794,7 +794,7 @@ paths:
       description: 查询POI信息
       operationId: douyin_video_position_search
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -885,44 +885,9 @@ paths:
           required: true
         - in: body
           name: body
+          required: true
           schema:
-            properties:
-              text:
-                type: string
-                description: 视频标题不要超过30个字符
-                required: false
-              video_id:
-                type: string
-                description: video_id, 通过/toutiao/video/upload/接口得到
-                required: false
-              extra:
-                type: object
-                properties:
-                  now:
-                    type: integer
-                    format: int64
-                    description: 毫秒级时间戳
-                    required: false
-                  sub_description:
-                    type: string
-                    description: 子错误码描述
-                    required: false
-                  sub_error_code:
-                    type: string
-                    description: 子错误码
-                    required: false
-                  description:
-                    type: string
-                    description: 错误码描述
-                    required: false
-                  error_code:
-                    type: string
-                    description: 错误码
-                    required: false
-                  logid:
-                    type: string
-                    description: 标识请求的唯一id
-                    required: false
+            $ref: "#/definitions/DouyinVideoCreateReq"
       responses:
         "200":
           description: successful operation
@@ -1271,31 +1236,7 @@ paths:
         - in: body
           name: body
           schema:
-            properties:
-              abstract:
-                type: string
-                description: 视频简介，400字以内
-                required: true
-              claim_origin:
-                type: string
-                description: 是否声明原创（授权账号需要在西瓜视频端内开通「实名认证」）
-                required: true
-              cover_tsp:
-                type: string
-                description: 从视频中截取封面的时间，用该帧作为封面（单位为毫秒）
-                required: false
-              praise:
-                type: string
-                description: 是否给视频开通可以赞赏的入口（授权账号需要在西瓜视频端内开通「实名认证」）
-                required: true
-              text:
-                type: string
-                description: 标题长度应该在5-30字之间
-                required: true
-              video_id:
-                type: string
-                description: video_id, 通过/xigua/video/upload/接口得到
-                required: true
+            $ref: "#/definitions/XiGuaVideoCreateReq"
       responses:
         "200":
           description: successful operation
@@ -1384,7 +1325,7 @@ paths:
       description: 评论列表
       operationId: item_comment_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -1428,7 +1369,7 @@ paths:
       description: 评论回复列表
       operationId: item_comment_reply_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -1477,7 +1418,7 @@ paths:
       description: 评论回复列表
       operationId: item_comment_reply
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -1495,13 +1436,7 @@ paths:
           name: body
           required: true
           schema:
-            properties:
-              comment_id:
-                type: string
-              content:
-                type: string
-              item_id:
-                type: string
+            $ref: "#/definitions/ItemCommentReplyReq"
       responses:
         "200":
           description: successful operation
@@ -1515,7 +1450,7 @@ paths:
       description: 评论列表
       operationId: video_comment_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -1559,7 +1494,7 @@ paths:
       description: 评论列表
       operationId: video_comment_reply_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -1608,7 +1543,7 @@ paths:
       description: (企业号)回复视频评论
       operationId: video_comment_reply
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -1626,19 +1561,7 @@ paths:
           name: body
           required: true
           schema:
-            properties:
-              comment_id:
-                type: string
-                required: true
-                description: 需要回复的评论id
-              content:
-                type: string
-                required: true
-                description: 评论内容
-              item_id:
-                type: string
-                required: true
-                description: 视频id
+            $ref: "#/definitions/VideoCommentReplyReq"
       responses:
         "200":
           description: successful operation
@@ -1652,7 +1575,7 @@ paths:
       description: (企业号)置顶视频评论
       operationId: video_comment_top
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -1670,19 +1593,7 @@ paths:
           name: body
           required: true
           schema:
-            properties:
-              top:
-                type: boolean
-                required: true
-                description: true置顶, false取消置顶
-              comment_id:
-                type: string
-                required: true
-                description: 需要回复的评论id
-              item_id:
-                type: string
-                required: true
-                description: 视频id
+            $ref: "#/definitions/VideoCommentTopReq"
       responses:
         "200":
           description: successful operation
@@ -1696,7 +1607,7 @@ paths:
       description: (企业号)发送私信给用户
       operationId: enterprise_im_message_send
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -1714,27 +1625,7 @@ paths:
           name: body
           required: true
           schema:
-            properties:
-              persona_id:
-                type: string
-                required: false
-                description: 客服id，传则走客服会话，否则为普通会话
-              to_user_id:
-                type: string
-                required: false
-                description: 消息的接收方openid
-              client_msg_id:
-                type: string
-                required: false
-                description: 内部使用
-              content:
-                type: string
-                required: false
-                description: 消息体见下方schema
-              message_type:
-                type: string
-                required: false
-                description: 消息内容格式 `text` - 文本消息 `image` - 图片消息 `video` - 视频消息 `card` - 卡片消息
+            $ref: "#/definitions/EnterpriseImMessageSendReq"
       responses:
         "200":
           description: successful operation
@@ -1792,7 +1683,7 @@ paths:
       description: 关键词视频评论列表
       operationId: video_search_comment_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -1831,7 +1722,7 @@ paths:
       description: 关键词视频评论回复
       operationId: video_search_comment_reply
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -1849,19 +1740,7 @@ paths:
           name: body
           required: true
           schema:
-            properties:
-              sec_item_id:
-                type: string
-                required: true
-                description: 视频搜索接口返回的加密的视频id
-              comment_id:
-                type: string
-                required: false
-                description: 需要回复的评论id（如果需要回复的是视频不传此字段）
-              content:
-                type: string
-                required: true
-                description: 评论内容
+            $ref: "#/definitions/VideoSearchCommentReplyReq"
       responses:
         "200":
           description: successful operation
@@ -1875,7 +1754,7 @@ paths:
       description: 评论回复列表
       operationId: video_search_comment_reply_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -1919,7 +1798,7 @@ paths:
       description: 获取用户视频情况
       operationId: data_external_user_item
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -1952,7 +1831,7 @@ paths:
       description: 获取用户粉丝数
       operationId: data_external_user_fans
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -1985,7 +1864,7 @@ paths:
       description: 获取用户点赞数
       operationId: data_external_user_like
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2018,7 +1897,7 @@ paths:
       description: 获取用户评论数
       operationId: data_external_user_comment
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2051,7 +1930,7 @@ paths:
       description: 获取用户分享数
       operationId: data_external_user_share
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2084,7 +1963,7 @@ paths:
       description: 获取用户主页访问数
       operationId: data_external_user_profile
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2117,7 +1996,7 @@ paths:
       description: 获取视频基础数据
       operationId: data_external_item_base
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2149,7 +2028,7 @@ paths:
       description: 获取视频点赞数据
       operationId: data_external_item_like
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2187,7 +2066,7 @@ paths:
       description: 获取视频评论数据
       operationId: data_external_item_comment
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2225,7 +2104,7 @@ paths:
       description: 获取视频播放数据
       operationId: data_external_item_play
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2263,7 +2142,7 @@ paths:
       description: 获取视频分享数据
       operationId: data_external_item_share
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2301,7 +2180,7 @@ paths:
       description: 获取用户粉丝数据
       operationId: fans_data
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2328,7 +2207,7 @@ paths:
       description: 获取实时热点词
       operationId: hotsearch_sentences
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2350,7 +2229,7 @@ paths:
       description: 获取上升词
       operationId: hotsearch_trending_sentences
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2384,7 +2263,7 @@ paths:
       description: 获取热点词聚合的视频
       operationId: hotsearch_videos
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2411,7 +2290,7 @@ paths:
       description: 获取抖音星图达人热榜
       operationId: star_host_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2439,7 +2318,7 @@ paths:
       description: 获取抖音星图达人指数
       operationId: star_author_score
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2466,7 +2345,7 @@ paths:
       description: 获取抖音星图达人指数数据V2
       operationId: star_author_score_v2
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2493,7 +2372,7 @@ paths:
       description: 获取抖音电影榜、抖音电视剧榜、抖音综艺榜
       operationId: discovery_ent_rank_item
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2527,7 +2406,7 @@ paths:
       description: 获取抖音影视综榜单版本
       operationId: discovery_ent_rank_version
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2567,7 +2446,7 @@ paths:
       description: 获取SDK分享视频数据
       operationId: data_external_sdk_share
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2599,7 +2478,7 @@ paths:
       description: 获取意向用户列表
       operationId: enterprise_leads_user_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2660,7 +2539,7 @@ paths:
       description: 获取意向用户详情
       operationId: enterprise_leads_user_detail
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2691,7 +2570,7 @@ paths:
       description: 获取意向用户互动记录
       operationId: enterprise_leads_user_action_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2737,7 +2616,7 @@ paths:
       description: 获取标签列表
       operationId: enterprise_leads_tag_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2774,7 +2653,7 @@ paths:
       description: 获取打标签的用户列表
       operationId: enterprise_leads_tag_user_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2816,7 +2695,7 @@ paths:
       description: 创建标签
       operationId: enterprise_leads_tag_create
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2833,10 +2712,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              tag_name:
-                type: string
+            $ref: "#/definitions/EnterpriseLeadsTagCreateReq"
       responses:
         "200":
           description: successful operation
@@ -2850,7 +2726,7 @@ paths:
       description: 编辑标签
       operationId: enterprise_leads_tag_update
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2867,15 +2743,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              tag_id:
-                type: integer
-                format: int64
-                description: 标签id
-              tag_name:
-                type: string
-                description: 标签名称
+            $ref: "#/definitions/EnterpriseLeadsTagUpdateReq"
       responses:
         "200":
           description: successful operation
@@ -2889,7 +2757,7 @@ paths:
       description: 删除标签
       operationId: enterprise_leads_tag_delete
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2906,12 +2774,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              tag_id:
-                type: integer
-                format: int64
-                description: 标签id
+            $ref: "#/definitions/EnterpriseLeadsTagDeleteReq"
       responses:
         "200":
           description: successful operation
@@ -2925,7 +2788,7 @@ paths:
       description: 给用户设置标签
       operationId: enterprise_leads_tag_user_update
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2942,21 +2805,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              bind:
-                type: boolean
-                description: 是否绑定
-                required: false
-              tag_id:
-                type: integer
-                format: int64
-                description: 标签id
-                required: false
-              user_id:
-                type: string
-                description: 用户openid
-                required: false
+            $ref: "#/definitions/EnterpriseLeadsTagUserUpdateReq"
       responses:
         "200":
           description: successful operation
@@ -2970,7 +2819,7 @@ paths:
       description: 客服账号
       operationId: enterprise_im_person_create
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -2987,16 +2836,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              role_name:
-                type: string
-                description: 角色名（暂未开放）
-                required: false
-              nickname:
-                type: string
-                description: 昵称
-                required: false
+            $ref: "#/definitions/EnterpriseImPersonCreateReq"
       responses:
         "200":
           description: successful operation
@@ -3010,7 +2850,7 @@ paths:
       description: 删除客服账号
       operationId: enterprise_im_person_delete
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3027,12 +2867,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              persona_id:
-                type: string
-                description: 客服id
-                required: false
+            $ref: "#/definitions/EnterpriseImPersonDeleteReq"
       responses:
         "200":
           description: successful operation
@@ -3046,7 +2881,7 @@ paths:
       description: 获取客服列表
       operationId: enterprise_im_person_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3085,7 +2920,7 @@ paths:
       description: 主动创建客服会话
       operationId: enterprise_im_person_conversation_create
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3102,14 +2937,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              persona_id:
-                type: string
-                description: 客服id
-              to_user_id:
-                type: string
-                description: 会话对方的open_id
+            $ref: "#/definitions/EnterpriseImPersonConversationCreateReq"
       responses:
         "200":
           description: successful operation
@@ -3123,7 +2951,7 @@ paths:
       description: 删除客服会话
       operationId: enterprise_im_person_conversation_delete
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3140,14 +2968,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              persona_id:
-                type: string
-                description: 客服id
-              to_user_id:
-                type: string
-                description: 会话对方的open_id
+            $ref: "#/definitions/EnterpriseImPersonConversationDeleteReq"
       responses:
         "200":
           description: successful operation
@@ -3161,7 +2982,7 @@ paths:
       description: 创建团购活动
       operationId: enterprise_groupon_save
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3178,109 +2999,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              actual_amount:
-                type: integer
-                format: int64
-                description: 实际金额(单位分)
-                required: false
-              code_type:
-                type: integer
-                format: int64
-                description: 0券码生成的方式;1系统生成;2自定义上传
-                required: false
-              h5_url:
-                type: string
-                description: 团购活动详情页链接
-                required: false
-              order_limit:
-                type: integer
-                format: int64
-                description: 单用户购买数量上限
-                required: false
-              audit_msg:
-                type: string
-                description: 审核失败原因
-                required: false
-              groupon_id:
-                type: string
-                description: 团购活动Id，审核失败修改用
-                required: false
-              start_time:
-                type: integer
-                format: int64
-                description: 活动开始时间 unix time
-                required: false
-              stock:
-                type: integer
-                format: int64
-                description: 团购活动库存总数
-                required: false
-              title:
-                type: string
-                description: 卡券标题
-                required: false
-              end_time:
-                type: integer
-                format: int64
-                description: 活动截止时间 unix time
-                required: false
-              merchant_name:
-                type: string
-                description: 商户名称
-                required: false
-              service_number:
-                type: string
-                description: 联系电话
-                required: false
-              status:
-                type: integer
-                format: int64
-                description: 活动状态 创建时可以忽略 1有效 2审核中 3审核失败 4中止
-                required: false
-              notification:
-                type: string
-                description: 团购须知
-                required: false
-              original_amount:
-                type: integer
-                format: int64
-                description: 原价(单位分)
-                required: false
-              sold_count:
-                type: integer
-                format: int64
-                description: 已售出数量
-                required: false
-              use_type:
-                type: integer
-                format: int64
-                description: 团购使用方式 1 到店核销
-                required: false
-              groupon_goods:
-                type: array
-                description: 团购商品
-                items:
-                  type: object
-                  properties:
-                    name:
-                      type: string
-                      description: 商品名称
-                    price:
-                      type: integer
-                      format: int64
-                      description: 商品金额(单位分)
-              cover_images:
-                type: array
-                description: 封面图
-                items:
-                  type: string
-              poi_ids:
-                type: array
-                description: 绑定的POI 列表 默认展示全部门店
-                items:
-                  type: string
+            $ref: "#/definitions/EnterpriseGrouponSaveReq"
       responses:
         "200":
           description: successful operation
@@ -3294,7 +3013,7 @@ paths:
       description: 团购活动列表
       operationId: enterprise_groupon_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3339,7 +3058,7 @@ paths:
       description: 团购活动详情
       operationId: enterprise_groupon_detail
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3373,7 +3092,7 @@ paths:
       description: 团购活动下线
       operationId: enterprise_groupon_offline
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3390,11 +3109,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              groupon_id:
-                type: string
-                description: 团购活动Id
+            $ref: "#/definitions/EnterpriseGrouponOfflineReq"
       responses:
         "200":
           description: successful operation
@@ -3408,7 +3123,7 @@ paths:
       description: 团购活动用户申请退款订单列表
       operationId: enterprise_groupon_order_refund_apply_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3497,7 +3212,7 @@ paths:
       description: 团购活动订单列表详情
       operationId: enterprise_groupon_order_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3553,7 +3268,7 @@ paths:
       description: 团购活动订单汇总信息
       operationId: enterprise_groupon_order_overview
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3592,7 +3307,7 @@ paths:
       description: 确认退款
       operationId: enterprise_groupon_order_refund_confirm
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3609,11 +3324,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              order_id:
-                type: string
-                description: 团购活动订单Id
+            $ref: "#/definitions/EnterpriseGrouponOrderRefundConfirmReq"
       responses:
         "200":
           description: successful operation
@@ -3627,7 +3338,7 @@ paths:
       description: 券码核销
       operationId: enterprise_groupon_code_verification
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3644,14 +3355,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              code:
-                type: string
-                description: 券码的列表
-              groupon_id:
-                type: string
-                description: 团购活动的Id
+            $ref: "#/definitions/EnterpriseGrouponCodeVerificationReq"
       responses:
         "200":
           description: successful operation
@@ -3665,7 +3369,7 @@ paths:
       description: 查看券码状态
       operationId: enterprise_groupon_code_status
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3682,16 +3386,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              code:
-                description: 券码的列表
-                type: array
-                items:
-                  type: string
-              groupon_id:
-                type: string
-                description: 团购活动的Id
+            $ref: "#/definitions/EnterpriseGrouponCodeStatusReq"
       responses:
         "200":
           description: successful operation
@@ -3705,7 +3400,7 @@ paths:
       description: 创建/更新消息卡片
       operationId: enterprise_im_card_save
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3722,20 +3417,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              card_id:
-                type: string
-                description: 卡片id，创建时不传；更新时必传。同一个用户的卡片id不可重复
-                required: false
-              card_type:
-                type: string
-                description: 卡片类型 `question_list` - 问题列表
-                required: false
-              content:
-                type: string
-                required: false
-                description:  卡片内容字段 json序列化成string， { "question_list" { "text" "有什么疑问呢", "questions" [{ "name" "问题1", "text" "关键词1" }, { "name" "问题2", "text" "关键词2" } ] } }
+            $ref: "#/definitions/EnterpriseImCardSaveReq"
       responses:
         "200":
           description: successful operation
@@ -3749,7 +3431,7 @@ paths:
       description: 获取消息卡片列表
       operationId: enterprise_im_card_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3788,7 +3470,7 @@ paths:
       description: 删除消息卡片
       operationId: enterprise_im_card_delete
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3805,11 +3487,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              card_id:
-                type: string
-                required: false
+            $ref: "#/definitions/EnterpriseImCardDeleteReq"
       responses:
         "200":
           description: successful operation
@@ -3823,7 +3501,7 @@ paths:
       description: 商铺同步
       operationId: poi_supplier_sync
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3849,7 +3527,7 @@ paths:
       description: 查询店铺
       operationId: poi_supplier_query
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3875,7 +3553,7 @@ paths:
       description: 获取抖音POI ID
       operationId: poi_query
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3901,7 +3579,7 @@ paths:
       description: 店铺匹配
       operationId: poi_supplier_match
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3913,40 +3591,7 @@ paths:
         - in: body
           name: body
           schema:
-            properties:
-              match_type:
-                type: integer
-                format: int64
-                description: 匹配类型，0-离线匹配 1-实时匹配。离线匹配，不会实时返回结果，最大上传1w个数据，通过/poi/supplier/match/query/接口查询匹配结果； 在线匹配，实时返回结果，最大上传100个数据，需要申请授权。
-              match_data_list:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    address:
-                      type: string
-                      description: POI地址
-                    amap_id:
-                      type: string
-                      description: 高德POI ID
-                    city:
-                      type: string
-                      description: POI所在城市
-                    latitude:
-                      type: string
-                      description: 纬度
-                    longitude:
-                      type: string
-                      description: 经度
-                    poi_name:
-                      type: string
-                      description: POI名称
-                    province:
-                      type: string
-                      description: POI所在省份
-                    supplier_ext_id:
-                      type: string
-                      description: 第三方商户ID
+            $ref: "#/definitions/PoiSupplierMatchReq"
       responses:
         "200":
           description: successful operation
@@ -3960,7 +3605,7 @@ paths:
       description: 店铺匹配结果查询
       operationId: poi_supplier_match_query
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -3990,7 +3635,7 @@ paths:
       description: SPU同步
       operationId: poi_spu_sync
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4002,41 +3647,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              description:
-                type: string
-                description: SPU描述
-                required: false
-              name:
-                type: string
-                description: SPU名称
-                required: true
-              order:
-                type: integer
-                format: int64
-                description: SPU展示顺序,降序
-                required: false
-              spu_ext_id:
-                type: string
-                description: 接入方SPU ID
-                required: true
-              spu_type:
-                type: integer
-                format: int64
-                description: spu类型号，1-酒店民宿房型，90-景区门票，91-团购券 20 电商实体商品 21 电商虚拟商品
-                required: false
-              status:
-                type: integer
-                format: int64
-                description: 在线状态 1 - 在线; 2 - 下线
-                required: true
-              supplier_ext_id:
-                type: string
-                description: 接入方店铺ID
-                required: true
-              attributes:
-                $ref: "#/definitions/PoiSupplier"
+            $ref: "#/definitions/PoiSpuSyncReq"
       responses:
         "200":
           description: successful operation
@@ -4050,7 +3661,7 @@ paths:
       description: 查询SPU
       operationId: poi_spu_query
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4088,40 +3699,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              spu_ext_id:
-                type: string
-                description: 外部平台SPU ID
-                required: true
-              skus:
-                required: true
-                type: array
-                items:
-                  type: object
-                  properties:
-                    price:
-                      type: integer
-                      format: int64
-                      description: 价格(人民币分)
-                      required: false
-                    status:
-                      type: integer
-                      format: int64
-                      description: 在线状态 1 - 在线; 2 - 下线
-                      required: false
-                    stock:
-                      type: integer
-                      format: int64
-                      description: 库存数量
-                      required: false
-                    attributes:
-                      type: object
-                      description: SKU属性字段
-                      properties:
-                        1310:
-                          type: string
-                          description: 酒店、名宿SKU日期
+            $ref: "#/definitions/PoiSkuSyncReq"
       responses:
         "200":
           description: successful operation
@@ -4135,7 +3713,7 @@ paths:
       description: sku拉取(该接口由接入方实现)
       operationId: poi_ext_hotel_sku
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4169,7 +3747,7 @@ paths:
       description: 商户向用户转账
       operationId: douyin_pay_account_trans
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4187,40 +3765,12 @@ paths:
           name: body
           required: true
           schema:
-            type: object
-            properties:
-              trans_code:
-                type: string
-                description: 交易场景码，SEND_MONEY_REDPACKET 红包转账 SEND_VCOIN_REDPACKET 抖币转账
-              amount:
-                type: integer
-                format: int64
-                description: 数目
-              biz_order_no:
-                type: string
-                description: 外部订单号，由调用方生成，长度小于64
-              live_id:
-                type: integer
-                format: int64
-                description: 业务id
-              merchant_id:
-                type: integer
-                format: int64
-                description: 商户id
-              order_desc:
-                type: string
-                description: 订单描述，长度小于256
-              order_name:
-                type: string
-                description: 订单名称，长度小于64
-              remark:
-                type: string
-                description: 标记，长度小于512
+            $ref: "#/definitions/DouyinPayAccountTransReq"
       responses:
         "200":
           description: successful operation
           schema:
-            $ref: "#/definitions/DouyinPayAccountTrans"
+            $ref: "#/definitions/DouyinPayAccountTransRsp"
   /douyin-pay/order-query:
     get:
       tags:
@@ -4229,7 +3779,7 @@ paths:
       description: 订单查询，可查询一个月内的订单，优先级biz_order_no>pay_order_no
       operationId: douyin_pay_order_query
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4273,7 +3823,7 @@ paths:
       description: 账户余额查询
       operationId: douyin_pay_account_query
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4307,7 +3857,7 @@ paths:
       description: 订单状态同步接口
       operationId: poi_order_status
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4320,30 +3870,12 @@ paths:
           name: body
           required: true
           schema:
-            type: object
-            properties:
-              order_id:
-                type: string
-                description: 抖音订单号
-                required: true
-              status:
-                type: integer
-                format: int64
-                description: 订单确认状态。0 - 订单确认, 1 - 价格变动, 2 - 库存不足, 3 - 确认中
-                required: true
-              supplier_ext_id:
-                type: string
-                description: 接入方商铺ID
-                required: true
-              order_ext_id:
-                type: string
-                description: 接入方订单号
-                required: true
+            $ref: "#/definitions/PoiOrderStatusReq"
       responses:
         "200":
           description: successful operation
           schema:
-            $ref: "#/definitions/PoiOrderStatus"
+            $ref: "#/definitions/PoiOrderStatusRsp"
   /poi/ext/hotel/order/commit:
     post:
       tags:
@@ -4352,7 +3884,7 @@ paths:
       description: 下单接口(该接口由接入方实现)
       operationId: poi_ext_hotel_order_commit
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4360,83 +3892,7 @@ paths:
           name: body
           required: true
           schema:
-            type: object
-            properties:
-              status:
-                type: integer
-                format: int64
-                description: 订单支付状态。0 - 未支付, 1 - 已支付
-                required: true
-              check_in:
-                type: string
-                description: 入住时间 yyyyMMdd
-                required: true
-              check_out:
-                type: string
-                description: 离店时间 yyyyMMdd
-                required: true
-              customer_name:
-                type: string
-                description: 预订人姓名
-                required: true
-              customer_phone:
-                type: integer
-                format: int64
-                description: 预订人电话
-                required: true
-              order_id:
-                type: string
-                description: 抖音订单号
-                required: true
-              remark:
-                type: string
-                description: 备注
-                required: false
-              total_price:
-                type: integer
-                format: int64
-                description: 总价, 单位人民币分
-                required: true
-              reserve_amount:
-                type: integer
-                format: int64
-                description: 预定数量
-                required: true
-              spu_ext_id:
-                type: string
-                description: 接入方房型ID
-                required: true
-              date_price:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    date:
-                      type: string
-                      description: 入住日期 yyyyMMdd
-                      required:  false
-                    date_price:
-                      type: integer
-                      format: int64
-                      description: 入住日价格, 人民币分
-                      required:  false
-              customer_list:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    cn_name:
-                      type: string
-                      description: 中文全称
-                      required: false
-                    given_name:
-                      type: string
-                      description: 英文名
-                      required: false
-                    surname:
-                      type: string
-                      description: 英文姓
-                      required: false
+            $ref: "#/definitions/PoiExtHotelOrderCommitReq"
       responses:
         "200":
           description: successful operation
@@ -4450,7 +3906,7 @@ paths:
       description: 支付状态通知(该接口由接入方实现)
       operationId: poi_ext_hotel_order_status
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4458,39 +3914,7 @@ paths:
           name: body
           required: true
           schema:
-            type: object
-            properties:
-              status:
-                type: integer
-                format: int64
-                description: 订单支付状态。0 - 未支付, 1 - 已支付
-                required: true
-              order_id:
-                type: string
-                description: 抖音订单号
-                required: true
-              supplier_ext_id:
-                type: string
-                description: 接入方商铺ID
-                required: true
-              order_ext_id:
-                type: string
-                description: 接入方订单号
-                required: true
-              date_price:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    date:
-                      type: string
-                      description: 入住日期 yyyyMMdd
-                      required:  false
-                    date_price:
-                      type: integer
-                      format: int64
-                      description: 入住日价格, 人民币分
-                      required:  false
+            $ref: "#/definitions/PoiExtHotelOrderStatusReq"
       responses:
         "200":
           description: successful operation
@@ -4504,7 +3928,7 @@ paths:
       description: 取消订单(该接口由接入方实现)
       operationId: poi_ext_hotel_order_cancel
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4512,39 +3936,7 @@ paths:
           name: body
           required: true
           schema:
-            type: object
-            properties:
-              order_id:
-                type: string
-                description: 抖音订单号
-                required: true
-              order_status:
-                type: integer
-                format: int64
-                description: 订单状态。0 - 未支付, 1 - 已支付
-                required: true
-              supplier_ext_id:
-                type: string
-                description: 接入方商铺ID
-                required: true
-              order_ext_id:
-                type: string
-                description: 接入方订单号
-                required: true
-              date_price:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    date:
-                      type: string
-                      description: 入住日期 yyyyMMdd
-                      required:  false
-                    date_price:
-                      type: integer
-                      format: int64
-                      description: 入住日价格, 人民币分
-                      required:  false
+            $ref: "#/definitions/PoiExtHotelOrderCancelReq"
       responses:
         "200":
           description: successful operation
@@ -4570,45 +3962,7 @@ paths:
         - in: body
           name: body
           schema:
-            type: object
-            properties:
-              order_type:
-                type: integer
-                format: int64
-                description: 订单类型- 201 预约点餐订单, 202 餐厅预定订单, 203 餐厅排队订单, 9001 景区门票订单, 9101 团购券订单, 9201 在线预约订单, 9301 外卖订单, 140 住宿订单
-                required: true
-              date_time:
-                type: integer
-                format: int64
-                description: 订单状态。0 - 未支付, 1 - 已支付
-                required: true
-              order_detail:
-                type: string
-                description: 订单的细节，不同的订单业务有不同的结构体，请具体询问业务方字段结构
-                required: true
-              ext_shop_info:
-                type: object
-                properties:
-                  ext_shop_id:
-                    type: string
-                    description: 外部商户ID
-                    required: false
-                  shop_id:
-                    type: string
-                    description: 抖音商户ID
-                    required: false
-              mini_app:
-                description: 小程序形式对接抖音时，该字段必传
-                type: object
-                properties:
-                  user_open_id:
-                    type: string
-                    description: 外部商户ID
-                    required: false
-                  app_id:
-                    type: string
-                    description: 抖音商户ID
-                    required: false
+            $ref: "#/definitions/PoiOrderSyncReq"
       responses:
         "200":
           description: successful operation
@@ -4622,7 +3976,7 @@ paths:
       description: 获取POI基础数据
       operationId: data_external_poi_base
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4659,7 +4013,7 @@ paths:
       description: POI用户数据
       operationId: data_external_poi_user
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4692,7 +4046,7 @@ paths:
       description: POI服务基础数据
       operationId: data_external_poi_service_base
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4735,7 +4089,7 @@ paths:
       description: POI服务成交用户数据
       operationId: data_external_poi_service_user
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4774,7 +4128,7 @@ paths:
       description: POI热度榜
       operationId: data_external_poi_billboard
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4802,7 +4156,7 @@ paths:
       description: POI认领列表
       operationId: data_external_poi_claim_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4841,7 +4195,7 @@ paths:
       description: 通过高德POI ID获取抖音POI ID
       operationId: poi_base_query_amap
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4882,17 +4236,13 @@ paths:
           type: string
           required: true
           description: 通过/oauth/access_token/获取，用户唯一标志
-        - in: body
-          name: body
+        - in: formData
+          name: media
           required: true
-          schema:
-            type: object
-            properties:
-              media:
-                type: array
-                items:
-                  type: string
-                  format: byte
+          type: array
+          items:
+            type: string
+            format: byte
       responses:
         "200":
           description: successful operation
@@ -4920,17 +4270,13 @@ paths:
           type: string
           required: true
           description: 通过/oauth/access_token/获取，用户唯一标志
-        - in: body
-          name: body
+        - in: formData
+          name: media
           required: true
-          schema:
-            type: object
-            properties:
-              media:
-                type: array
-                items:
-                  type: string
-                  format: byte
+          type: array
+          items:
+            type: string
+            format: byte
       responses:
         "200":
           description: successful operation
@@ -4944,7 +4290,7 @@ paths:
       description: 获取永久素材列表
       operationId: enterprise_media_list
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -4983,7 +4329,7 @@ paths:
       description: 删除永久素材
       operationId: enterprise_media_delete
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -5001,12 +4347,7 @@ paths:
           name: body
           required: true
           schema:
-            type: object
-            properties:
-              media_id:
-                type: string
-                description: 素材id
-                required: false
+            $ref: "#/definitions/EnterpriseMediaDeleteReq"
       responses:
         "200":
           description: successful operation
@@ -5020,7 +4361,7 @@ paths:
       description: 提供一个接口给开发者校验小程序appid是否可挂载到短视频
       operationId: devtool_micapp_is_legal
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -5047,7 +4388,7 @@ paths:
       description: 模拟webhook事件
       operationId: sandbox_webhook_event_send
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -5060,12 +4401,7 @@ paths:
           name: body
           required: true
           schema:
-            type: object
-            properties:
-              event_type:
-                type: string
-                description: 需要mock的事件类型, 开放平台会通过webhook发送一条mock数据给你
-                required: false
+            $ref: "#/definitions/SandboxWebhookEventEendReq"
       responses:
         "200":
           description: successful operation
@@ -5079,7 +4415,7 @@ paths:
       description: 获取jsapi_ticket
       operationId: js_getticket
       consumes:
-        - multipart/form-data
+        - application/json
       produces:
         - application/json
       parameters:
@@ -6153,8 +5489,7 @@ definitions:
                 type: integer
                 format: int64
               video_id:
-                type: integer
-                format: int64
+                type: string
                 description: 视频文件id
               width:
                 type: integer
@@ -6322,8 +5657,7 @@ definitions:
                 type: integer
                 format: int64
               video_id:
-                type: integer
-                format: int64
+                type: string
                 description: 视频文件id
               width:
                 type: integer
@@ -6518,8 +5852,7 @@ definitions:
                 type: integer
                 format: int64
               video_id:
-                type: integer
-                format: int64
+                type: string
                 description: 视频文件id
               width:
                 type: integer
@@ -6548,6 +5881,34 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  XiGuaVideoCreateReq:
+    title: DouyinVideoCreateReq
+    description: ""
+    properties:
+      abstract:
+        type: string
+        description: 视频简介，400字以内
+        required: true
+      claim_origin:
+        type: string
+        description: 是否声明原创（授权账号需要在西瓜视频端内开通「实名认证」）
+        required: true
+      cover_tsp:
+        type: string
+        description: 从视频中截取封面的时间，用该帧作为封面（单位为毫秒）
+        required: false
+      praise:
+        type: string
+        description: 是否给视频开通可以赞赏的入口（授权账号需要在西瓜视频端内开通「实名认证」）
+        required: true
+      text:
+        type: string
+        description: 标题长度应该在5-30字之间
+        required: true
+      video_id:
+        type: string
+        description: video_id, 通过/xigua/video/upload/接口得到
+        required: true
   XiGuaVideoCreateRsp:
     title: XiGuaVideoCreateRsp
     description: ""
@@ -6998,6 +6359,16 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  ItemCommentReplyReq:
+    title: ItemCommentReplyReq
+    description: ""
+    properties:
+      comment_id:
+        type: string
+      content:
+        type: string
+      item_id:
+        type: string
   ItemCommentReplyRsp:
     title: ItemCommentReplyRsp
     description: ""
@@ -7199,6 +6570,22 @@ definitions:
           now:
             type: integer
             format: int64
+  VideoCommentReplyReq:
+    title: VideoCommentReplyReq
+    description: ""
+    properties:
+      comment_id:
+        type: string
+        required: true
+        description: 需要回复的评论id
+      content:
+        type: string
+        required: true
+        description: 评论内容
+      item_id:
+        type: string
+        required: true
+        description: 视频id
   VideoCommentTopRsp:
     title: VideoCommentTopRsp
     description: ""
@@ -7221,6 +6608,46 @@ definitions:
           now:
             type: integer
             format: int64
+  VideoCommentTopReq:
+    title: VideoCommentTopReq
+    description: ""
+    properties:
+      top:
+        type: boolean
+        required: true
+        description: true置顶, false取消置顶
+      comment_id:
+        type: string
+        required: true
+        description: 需要回复的评论id
+      item_id:
+        type: string
+        required: true
+        description: 视频id
+  EnterpriseImMessageSendReq:
+    title: EnterpriseImMessageSendReq
+    description: ""
+    properties:
+      persona_id:
+        type: string
+        required: false
+        description: 客服id，传则走客服会话，否则为普通会话
+      to_user_id:
+        type: string
+        required: false
+        description: 消息的接收方openid
+      client_msg_id:
+        type: string
+        required: false
+        description: 内部使用
+      content:
+        type: string
+        required: false
+        description: 消息体见下方schema
+      message_type:
+        type: string
+        required: false
+        description: 消息内容格式 `text` - 文本消息 `image` - 图片消息 `video` - 视频消息 `card` - 卡片消息
   EnterpriseImMessageSendRsp:
     title: EnterpriseImMessageSendRsp
     description: ""
@@ -7407,6 +6834,22 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  VideoSearchCommentReplyReq:
+    title: VideoSearchCommentReplyReq
+    description: ""
+    properties:
+      sec_item_id:
+        type: string
+        required: true
+        description: 视频搜索接口返回的加密的视频id
+      comment_id:
+        type: string
+        required: false
+        description: 需要回复的评论id（如果需要回复的是视频不传此字段）
+      content:
+        type: string
+        required: true
+        description: 评论内容
   VideoSearchCommentReplyRsp:
     title: VideoSearchCommentReplyRsp
     description: ""
@@ -9071,6 +8514,13 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseLeadsTagCreateReq:
+    title: EnterpriseLeadsTagCreateReq
+    description: ""
+    type: object
+    properties:
+      tag_name:
+        type: string
   EnterpriseLeadsTagCreateRsp:
     title: EnterpriseLeadsTagCreateRsp
     description: ""
@@ -9115,6 +8565,18 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseLeadsTagUpdateReq:
+    title: EnterpriseLeadsTagUpdateReq
+    type: object
+    description: ""
+    properties:
+      tag_id:
+        type: integer
+        format: int64
+        description: 标签id
+      tag_name:
+        type: string
+        description: 标签名称
   EnterpriseLeadsTagUpdateRsp:
     title: EnterpriseLeadsTagUpdateRsp
     type: object
@@ -9159,6 +8621,15 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseLeadsTagDeleteReq:
+    title: EnterpriseLeadsTagDeleteReq
+    type: object
+    description: ""
+    properties:
+      tag_id:
+        type: integer
+        format: int64
+        description: 标签id
   EnterpriseLeadsTagDeleteRsp:
     title: EnterpriseLeadsTagDeleteRsp
     type: object
@@ -9200,6 +8671,24 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseLeadsTagUserUpdateReq:
+    title: EnterpriseLeadsTagUserUpdateReq
+    type: object
+    description: ""
+    properties:
+      bind:
+        type: boolean
+        description: 是否绑定
+        required: false
+      tag_id:
+        type: integer
+        format: int64
+        description: 标签id
+        required: false
+      user_id:
+        type: string
+        description: 用户openid
+        required: false
   EnterpriseLeadsTagUserUpdateRsp:
     title: EnterpriseLeadsTagUserUpdateRsp
     type: object
@@ -9241,6 +8730,19 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseImPersonCreateReq:
+    title: EnterpriseImPersonCreateReq
+    type: object
+    description: ""
+    properties:
+      role_name:
+        type: string
+        description: 角色名（暂未开放）
+        required: false
+      nickname:
+        type: string
+        description: 昵称
+        required: false
   EnterpriseImPersonCreateRsp:
     title: EnterpriseImPersonCreateRsp
     type: object
@@ -9285,6 +8787,15 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseImPersonDeleteReq:
+    title: EnterpriseImPersonDeleteReq
+    description: ""
+    type: object
+    properties:
+      persona_id:
+        type: string
+        description: 客服id
+        required: false
   EnterpriseImPersonDeleteRsp:
     title: EnterpriseImPersonDeleteRsp
     description: ""
@@ -9377,6 +8888,17 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseImPersonConversationCreateReq:
+    title: EnterpriseImPersonConversationCreateReq
+    description: ""
+    type: object
+    properties:
+      persona_id:
+        type: string
+        description: 客服id
+      to_user_id:
+        type: string
+        description: 会话对方的open_id
   EnterpriseImPersonConversationCreateRsp:
     title: EnterpriseImPersonConversationCreateRsp
     description: ""
@@ -9415,6 +8937,17 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseImPersonConversationDeleteReq:
+    title: EnterpriseImPersonConversationDeleteReq
+    description: ""
+    type: object
+    properties:
+      persona_id:
+        type: string
+        description: 客服id
+      to_user_id:
+        type: string
+        description: 会话对方的open_id
   EnterpriseImPersonConversationDeleteRsp:
     title: EnterpriseImPersonConversationDeleteRsp
     description: ""
@@ -9453,6 +8986,112 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseGrouponSaveReq:
+    title: EnterpriseGrouponSaveReq
+    description: ""
+    type: object
+    properties:
+      actual_amount:
+        type: integer
+        format: int64
+        description: 实际金额(单位分)
+        required: false
+      code_type:
+        type: integer
+        format: int64
+        description: 0券码生成的方式;1系统生成;2自定义上传
+        required: false
+      h5_url:
+        type: string
+        description: 团购活动详情页链接
+        required: false
+      order_limit:
+        type: integer
+        format: int64
+        description: 单用户购买数量上限
+        required: false
+      audit_msg:
+        type: string
+        description: 审核失败原因
+        required: false
+      groupon_id:
+        type: string
+        description: 团购活动Id，审核失败修改用
+        required: false
+      start_time:
+        type: integer
+        format: int64
+        description: 活动开始时间 unix time
+        required: false
+      stock:
+        type: integer
+        format: int64
+        description: 团购活动库存总数
+        required: false
+      title:
+        type: string
+        description: 卡券标题
+        required: false
+      end_time:
+        type: integer
+        format: int64
+        description: 活动截止时间 unix time
+        required: false
+      merchant_name:
+        type: string
+        description: 商户名称
+        required: false
+      service_number:
+        type: string
+        description: 联系电话
+        required: false
+      status:
+        type: integer
+        format: int64
+        description: 活动状态 创建时可以忽略 1有效 2审核中 3审核失败 4中止
+        required: false
+      notification:
+        type: string
+        description: 团购须知
+        required: false
+      original_amount:
+        type: integer
+        format: int64
+        description: 原价(单位分)
+        required: false
+      sold_count:
+        type: integer
+        format: int64
+        description: 已售出数量
+        required: false
+      use_type:
+        type: integer
+        format: int64
+        description: 团购使用方式 1 到店核销
+        required: false
+      groupon_goods:
+        type: array
+        description: 团购商品
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+              description: 商品名称
+            price:
+              type: integer
+              format: int64
+              description: 商品金额(单位分)
+      cover_images:
+        type: array
+        description: 封面图
+        items:
+          type: string
+      poi_ids:
+        type: array
+        description: 绑定的POI 列表 默认展示全部门店
+        items:
+          type: string
   EnterpriseGrouponSaveRsp:
     title: EnterpriseGrouponSaveRsp
     description: ""
@@ -9712,6 +9351,14 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseGrouponOfflineReq:
+    title: EnterpriseGrouponOfflineReq
+    description: ""
+    type: object
+    properties:
+      groupon_id:
+        type: string
+        description: 团购活动Id
   EnterpriseGrouponOfflineRsp:
     title: EnterpriseGrouponOfflineRsp
     description: ""
@@ -10088,6 +9735,14 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseGrouponOrderRefundConfirmReq:
+    title: EnterpriseGrouponOrderRefundConfirmReq
+    description: ""
+    type: object
+    properties:
+      order_id:
+        type: string
+        description: 团购活动订单Id
   EnterpriseGrouponOrderRefundConfirmRsp:
     title: EnterpriseGrouponOrderRefundConfirmRsp
     description: ""
@@ -10126,6 +9781,17 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseGrouponCodeVerificationReq:
+    title: EnterpriseGrouponCodeVerificationReq
+    description: ""
+    type: object
+    properties:
+      code:
+        type: string
+        description: 券码的列表
+      groupon_id:
+        type: string
+        description: 团购活动的Id
   EnterpriseGrouponCodeVerificationRsp:
     title: EnterpriseGrouponCodeVerificationRsp
     description: ""
@@ -10164,6 +9830,19 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseGrouponCodeStatusReq:
+    title: EnterpriseGrouponCodeStatusReq
+    description: ""
+    type: object
+    properties:
+      code:
+        description: 券码的列表
+        type: array
+        items:
+          type: string
+      groupon_id:
+        type: string
+        description: 团购活动的Id
   EnterpriseGrouponCodeStatusRsp:
     title: EnterpriseGrouponCodeStatusRsp
     description: ""
@@ -10229,6 +9908,23 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseImCardSaveReq:
+    title: EnterpriseImCardSaveReq
+    description: ""
+    type: object
+    properties:
+      card_id:
+        type: string
+        description: 卡片id，创建时不传；更新时必传。同一个用户的卡片id不可重复
+        required: false
+      card_type:
+        type: string
+        description: 卡片类型 `question_list` - 问题列表
+        required: false
+      content:
+        type: string
+        required: false
+        description: 卡片内容字段 json序列化成string， { "question_list" { "text" "有什么疑问呢", "questions" [{ "name" "问题1", "text" "关键词1" }, { "name" "问题2", "text" "关键词2" } ] } }
   EnterpriseImCardSaveRsp:
     title: EnterpriseImCardSaveRsp
     description: ""
@@ -10327,6 +10023,14 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseImCardDeleteReq:
+    title: EnterpriseImCardDeleteReq
+    description: ""
+    type: object
+    properties:
+      card_id:
+        type: string
+        required: false
   EnterpriseImCardDeleteRsp:
     title: EnterpriseImCardDeleteRsp
     description: ""
@@ -10730,6 +10434,44 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  PoiSupplierMatchReq:
+    title: PoiSupplierMatchReq
+    description: ""
+    type: object
+    properties:
+      match_type:
+        type: integer
+        format: int64
+        description: 匹配类型，0-离线匹配 1-实时匹配。离线匹配，不会实时返回结果，最大上传1w个数据，通过/poi/supplier/match/query/接口查询匹配结果； 在线匹配，实时返回结果，最大上传100个数据，需要申请授权。
+      match_data_list:
+        type: array
+        items:
+          type: object
+          properties:
+            address:
+              type: string
+              description: POI地址
+            amap_id:
+              type: string
+              description: 高德POI ID
+            city:
+              type: string
+              description: POI所在城市
+            latitude:
+              type: string
+              description: 纬度
+            longitude:
+              type: string
+              description: 经度
+            poi_name:
+              type: string
+              description: POI名称
+            province:
+              type: string
+              description: POI所在省份
+            supplier_ext_id:
+              type: string
+              description: 第三方商户ID
   PoiSupplierMatchRsp:
     title: PoiSupplierMatchRsp
     description: ""
@@ -10840,6 +10582,44 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  PoiSpuSyncReq:
+    title: PoiSpuSyncReq
+    description: ""
+    type: object
+    properties:
+      description:
+        type: string
+        description: SPU描述
+        required: false
+      name:
+        type: string
+        description: SPU名称
+        required: true
+      order:
+        type: integer
+        format: int64
+        description: SPU展示顺序,降序
+        required: false
+      spu_ext_id:
+        type: string
+        description: 接入方SPU ID
+        required: true
+      spu_type:
+        type: integer
+        format: int64
+        description: spu类型号，1-酒店民宿房型，90-景区门票，91-团购券 20 电商实体商品 21 电商虚拟商品
+        required: false
+      status:
+        type: integer
+        format: int64
+        description: 在线状态 1 - 在线; 2 - 下线
+        required: true
+      supplier_ext_id:
+        type: string
+        description: 接入方店铺ID
+        required: true
+      attributes:
+        $ref: "#/definitions/PoiSupplier"
   PoiSpuSyncRsp:
     title: PoiSpuSyncRsp
     description: ""
@@ -10900,6 +10680,43 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  PoiSkuSyncReq:
+    title: PoiSkuSyncReq
+    description: ""
+    type: object
+    properties:
+      spu_ext_id:
+        type: string
+        description: 外部平台SPU ID
+        required: true
+      skus:
+        required: true
+        type: array
+        items:
+          type: object
+          properties:
+            price:
+              type: integer
+              format: int64
+              description: 价格(人民币分)
+              required: false
+            status:
+              type: integer
+              format: int64
+              description: 在线状态 1 - 在线; 2 - 下线
+              required: false
+            stock:
+              type: integer
+              format: int64
+              description: 库存数量
+              required: false
+            attributes:
+              type: object
+              description: SKU属性字段
+              properties:
+                1310:
+                  type: string
+                  description: 酒店、名宿SKU日期
   PoiSkuSyncRsp:
     title: PoiSkuSyncRsp
     description: ""
@@ -10948,8 +10765,40 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
-  DouyinPayAccountTrans:
-    title: DouyinPayAccountTrans
+  DouyinPayAccountTransReq:
+    title: DouyinPayAccountTransReq
+    description: ""
+    type: object
+    properties:
+      trans_code:
+        type: string
+        description: 交易场景码，SEND_MONEY_REDPACKET 红包转账 SEND_VCOIN_REDPACKET 抖币转账
+      amount:
+        type: integer
+        format: int64
+        description: 数目
+      biz_order_no:
+        type: string
+        description: 外部订单号，由调用方生成，长度小于64
+      live_id:
+        type: integer
+        format: int64
+        description: 业务id
+      merchant_id:
+        type: integer
+        format: int64
+        description: 商户id
+      order_desc:
+        type: string
+        description: 订单描述，长度小于256
+      order_name:
+        type: string
+        description: 订单名称，长度小于64
+      remark:
+        type: string
+        description: 标记，长度小于512
+  DouyinPayAccountTransRsp:
+    title: DouyinPayAccountTransRsp
     description: ""
     properties:
       data:
@@ -11101,8 +10950,30 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
-  PoiOrderStatus:
-    title: PoiOrderStatus
+  PoiOrderStatusReq:
+    title: PoiOrderStatusReq
+    description: ""
+    type: object
+    properties:
+      order_id:
+        type: string
+        description: 抖音订单号
+        required: true
+      status:
+        type: integer
+        format: int64
+        description: 订单确认状态。0 - 订单确认, 1 - 价格变动, 2 - 库存不足, 3 - 确认中
+        required: true
+      supplier_ext_id:
+        type: string
+        description: 接入方商铺ID
+        required: true
+      order_ext_id:
+        type: string
+        description: 接入方订单号
+        required: true
+  PoiOrderStatusRsp:
+    title: PoiOrderStatusRsp
     description: ""
     properties:
       data:
@@ -11132,6 +11003,86 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  PoiExtHotelOrderCommitReq:
+    title: PoiExtHotelOrderCommitReq
+    description: ""
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int64
+        description: 订单支付状态。0 - 未支付, 1 - 已支付
+        required: true
+      check_in:
+        type: string
+        description: 入住时间 yyyyMMdd
+        required: true
+      check_out:
+        type: string
+        description: 离店时间 yyyyMMdd
+        required: true
+      customer_name:
+        type: string
+        description: 预订人姓名
+        required: true
+      customer_phone:
+        type: integer
+        format: int64
+        description: 预订人电话
+        required: true
+      order_id:
+        type: string
+        description: 抖音订单号
+        required: true
+      remark:
+        type: string
+        description: 备注
+        required: false
+      total_price:
+        type: integer
+        format: int64
+        description: 总价, 单位人民币分
+        required: true
+      reserve_amount:
+        type: integer
+        format: int64
+        description: 预定数量
+        required: true
+      spu_ext_id:
+        type: string
+        description: 接入方房型ID
+        required: true
+      date_price:
+        type: array
+        items:
+          type: object
+          properties:
+            date:
+              type: string
+              description: 入住日期 yyyyMMdd
+              required: false
+            date_price:
+              type: integer
+              format: int64
+              description: 入住日价格, 人民币分
+              required: false
+      customer_list:
+        type: array
+        items:
+          type: object
+          properties:
+            cn_name:
+              type: string
+              description: 中文全称
+              required: false
+            given_name:
+              type: string
+              description: 英文名
+              required: false
+            surname:
+              type: string
+              description: 英文姓
+              required: false
   PoiExtHotelOrderCommitRsp:
     title: PoiExtHotelOrderCommitRsp
     description: ""
@@ -11159,6 +11110,42 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  PoiExtHotelOrderStatusReq:
+    title: PoiExtHotelOrderStatusReq
+    description: ""
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int64
+        description: 订单支付状态。0 - 未支付, 1 - 已支付
+        required: true
+      order_id:
+        type: string
+        description: 抖音订单号
+        required: true
+      supplier_ext_id:
+        type: string
+        description: 接入方商铺ID
+        required: true
+      order_ext_id:
+        type: string
+        description: 接入方订单号
+        required: true
+      date_price:
+        type: array
+        items:
+          type: object
+          properties:
+            date:
+              type: string
+              description: 入住日期 yyyyMMdd
+              required: false
+            date_price:
+              type: integer
+              format: int64
+              description: 入住日价格, 人民币分
+              required: false
   PoiExtHotelOrderStatusRsp:
     title: PoiExtHotelOrderStatusRsp
     description: ""
@@ -11194,6 +11181,42 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  PoiExtHotelOrderCancelReq:
+    title: PoiExtHotelOrderCancelReq
+    description: ""
+    type: object
+    properties:
+      order_id:
+        type: string
+        description: 抖音订单号
+        required: true
+      order_status:
+        type: integer
+        format: int64
+        description: 订单状态。0 - 未支付, 1 - 已支付
+        required: true
+      supplier_ext_id:
+        type: string
+        description: 接入方商铺ID
+        required: true
+      order_ext_id:
+        type: string
+        description: 接入方订单号
+        required: true
+      date_price:
+        type: array
+        items:
+          type: object
+          properties:
+            date:
+              type: string
+              description: 入住日期 yyyyMMdd
+              required: false
+            date_price:
+              type: integer
+              format: int64
+              description: 入住日价格, 人民币分
+              required: false
   PoiExtHotelOrderCancelRsp:
     title: PoiExtHotelOrderCancelRsp
     description: ""
@@ -11229,6 +11252,48 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  PoiOrderSyncReq:
+    title: PoiOrderSyncReq
+    description: ""
+    type: object
+    properties:
+      order_type:
+        type: integer
+        format: int64
+        description: 订单类型- 201 预约点餐订单, 202 餐厅预定订单, 203 餐厅排队订单, 9001 景区门票订单, 9101 团购券订单, 9201 在线预约订单, 9301 外卖订单, 140 住宿订单
+        required: true
+      date_time:
+        type: integer
+        format: int64
+        description: 订单状态。0 - 未支付, 1 - 已支付
+        required: true
+      order_detail:
+        type: string
+        description: 订单的细节，不同的订单业务有不同的结构体，请具体询问业务方字段结构
+        required: true
+      ext_shop_info:
+        type: object
+        properties:
+          ext_shop_id:
+            type: string
+            description: 外部商户ID
+            required: false
+          shop_id:
+            type: string
+            description: 抖音商户ID
+            required: false
+      mini_app:
+        description: 小程序形式对接抖音时，该字段必传
+        type: object
+        properties:
+          user_open_id:
+            type: string
+            description: 外部商户ID
+            required: false
+          app_id:
+            type: string
+            description: 抖音商户ID
+            required: false
   PoiOrderSyncRsp:
     title: PoiOrderSyncRsp
     description: ""
@@ -11795,6 +11860,15 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  EnterpriseMediaDeleteReq:
+    title: EnterpriseMediaDeleteReq
+    description: ""
+    type: object
+    properties:
+      media_id:
+        type: string
+        description: 素材id
+        required: false
   EnterpriseMediaDeleteRsp:
     title: EnterpriseMediaDeleteRsp
     description: ""
@@ -11874,6 +11948,15 @@ definitions:
             type: integer
             format: int64
             description: 毫秒级时间戳
+  SandboxWebhookEventEendReq:
+    title: SandboxWebhookEventEendReq
+    description: ""
+    type: object
+    properties:
+      event_type:
+        type: string
+        description: 需要mock的事件类型, 开放平台会通过webhook发送一条mock数据给你
+        required: false
   SandboxWebhookEventEendRsp:
     title: SandboxWebhookEventEendRsp
     description: ""

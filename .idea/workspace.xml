@@ -31,6 +31,15 @@
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/api_video.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/api_video.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/api_video_search.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/api_video_search.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/client_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/client_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/CommentApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/CommentApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/EnterpriseApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/EnterpriseApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/EnterpriseGrouponApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/EnterpriseGrouponApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/EnterpriseImApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/EnterpriseImApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/EnterpriseImCardApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/EnterpriseImCardApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/GrouponCodeApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/GrouponCodeApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/GrouponOrderApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/GrouponOrderApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/ImApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/ImApi.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject10.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject10.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject11.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject11.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject12.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject12.md" afterDir="false" />
@@ -65,14 +74,24 @@
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject4.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject4.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject40.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject40.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject41.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject41.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject42.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject42.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject6.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject6.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject7.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject7.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject8.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject8.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject9.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/InlineObject9.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/MediaApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/MediaApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/PayApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/PayApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/PoiApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/PoiApi.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/PoiOrderApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/PoiOrderApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/SandboxApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/SandboxApi.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/SkuApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/SkuApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/SpuApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/SpuApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/TouTiaoVideoPartCompleteRsp.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/TouTiaoVideoPartCompleteRsp.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/TouTiaoVideoPartCompleteRspData.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/TouTiaoVideoPartCompleteRspData.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/ToutiaoVideoUploadRsp.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/ToutiaoVideoUploadRsp.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/VideoApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/VideoApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/VideoSearchApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/VideoSearchApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/XiGuaVideoPartCompleteRsp.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/XiGuaVideoPartCompleteRsp.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/docs/XiGuaVideoUploadRsp.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/docs/XiGuaVideoUploadRsp.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model__enterprise_groupon_save_groupon_goods.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model__enterprise_groupon_save_groupon_goods.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model__poi_ext_hotel_order_commit_customer_list.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model__poi_ext_hotel_order_commit_customer_list.go" afterDir="false" />
@@ -82,7 +101,6 @@
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model__poi_sku_sync_attributes.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model__poi_sku_sync_attributes.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model__poi_sku_sync_skus.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model__poi_sku_sync_skus.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model__poi_supplier_match_match_data_list.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model__poi_supplier_match_match_data_list.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model__toutiao_video_create_extra.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model__toutiao_video_create_extra.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model_access_token_rsp.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model_access_token_rsp.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model_access_token_rsp_data.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model_access_token_rsp_data.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model_authorize_rsp.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model_authorize_rsp.go" afterDir="false" />
@@ -312,7 +330,6 @@
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model_inline_object_4.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model_inline_object_4.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model_inline_object_40.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model_inline_object_40.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model_inline_object_41.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model_inline_object_41.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model_inline_object_42.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model_inline_object_42.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model_inline_object_5.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model_inline_object_5.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model_inline_object_6.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model_inline_object_6.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/douyin-open-api-go/model_inline_object_7.go" beforeDir="false" afterPath="$PROJECT_DIR$/out/douyin-open-api-go/model_inline_object_7.go" afterDir="false" />
@@ -465,8 +482,8 @@
       <recent name="$PROJECT_DIR$/out/douyin-open-api-go" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestUploadVideoPart in github.com/xopenapi/douyin-open-api-go">
-    <configuration name="TestImageApiClient in github.com/xopenapi/douyin-open-api-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestCommentEnterprise in github.com/xopenapi/douyin-open-api-go">
+    <configuration name="TestCommentEnterprise in github.com/xopenapi/douyin-open-api-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="douyin-open-api" />
       <working_directory value="$PROJECT_DIR$/out/douyin-open-api-go" />
       <framework value="gotest" />
@@ -474,7 +491,7 @@
       <package value="github.com/xopenapi/douyin-open-api-go" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestImageApiClient\E$" />
+      <pattern value="^\QTestCommentEnterprise\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestPost in github.com/xopenapi/douyin-open-api-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -510,7 +527,7 @@
       <pattern value="^\QTestUploadVideoPart\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestVideoSearchApiClient in github.com/xopenapi/douyin-open-api-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestUserinfoApiClient in github.com/xopenapi/douyin-open-api-go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="douyin-open-api" />
       <working_directory value="$PROJECT_DIR$/out/douyin-open-api-go" />
       <framework value="gotest" />
@@ -518,16 +535,16 @@
       <package value="github.com/xopenapi/douyin-open-api-go" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestVideoSearchApiClient\E$" />
+      <pattern value="^\QTestUserinfoApiClient\E$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestCommentEnterprise in github.com/xopenapi/douyin-open-api-go" />
+        <item itemvalue="Go Test.TestUserinfoApiClient in github.com/xopenapi/douyin-open-api-go" />
         <item itemvalue="Go Test.TestUploadVideoPart in github.com/xopenapi/douyin-open-api-go" />
         <item itemvalue="Go Test.TestPost in github.com/xopenapi/douyin-open-api-go" />
         <item itemvalue="Go Test.TestPublishVideoPart in github.com/xopenapi/douyin-open-api-go" />
-        <item itemvalue="Go Test.TestVideoSearchApiClient in github.com/xopenapi/douyin-open-api-go" />
-        <item itemvalue="Go Test.TestImageApiClient in github.com/xopenapi/douyin-open-api-go" />
       </list>
     </recent_temporary>
   </component>
@@ -559,9 +576,10 @@
       <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state x="394" y="110" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.23.1440.821@0.23.1440.821" timestamp="1601090459751" />
-    <state x="307" y="23" width="1095" height="821" key="CommitChangelistDialog2" timestamp="1601382392319">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state x="307" y="23" width="1095" height="801" key="CommitChangelistDialog2" timestamp="1601388497337">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
+    <state x="307" y="23" width="1095" height="801" key="CommitChangelistDialog2/0.23.1440.801@0.23.1440.801" timestamp="1601388497337" />
     <state x="307" y="23" key="CommitChangelistDialog2/0.23.1440.804@0.23.1440.804" timestamp="1601382392319" />
     <state x="307" y="23" key="CommitChangelistDialog2/0.23.1440.806@0.23.1440.806" timestamp="1601380109915" />
     <state x="307" y="23" key="CommitChangelistDialog2/0.23.1440.808@0.23.1440.808" timestamp="1601036976635" />
@@ -571,98 +589,106 @@
       <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="129" y="144" width="1200" height="571" key="DiffContextDialog/0.23.1440.812@0.23.1440.812" timestamp="1601023260073" />
-    <state width="1398" height="238" key="GridCell.Tab.0.bottom" timestamp="1601379991187">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="699" height="194" key="GridCell.Tab.0.bottom" timestamp="1602320303298">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
-    <state width="1398" height="238" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1601379991187" />
+    <state width="1083" height="288" key="GridCell.Tab.0.bottom/0.23.1440.801@0.23.1440.801" timestamp="1602235601272" />
+    <state width="1083" height="141" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1602234490557" />
     <state width="1398" height="268" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1601350290708" />
     <state width="1398" height="255" key="GridCell.Tab.0.bottom/0.23.1440.808@0.23.1440.808" timestamp="1601374696250" />
     <state width="1398" height="187" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1601372705331" />
-    <state width="1398" height="194" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1601362828676" />
+    <state width="699" height="194" key="GridCell.Tab.0.bottom/0.23.1440.812@0.23.1440.812" timestamp="1602320303298" />
     <state width="1398" height="233" key="GridCell.Tab.0.bottom/0.23.1440.814@0.23.1440.814" timestamp="1601296934612" />
     <state width="1398" height="123" key="GridCell.Tab.0.bottom/0.23.1440.816@0.23.1440.816" timestamp="1601287483205" />
     <state width="1398" height="221" key="GridCell.Tab.0.bottom/0.23.1440.821@0.23.1440.821" timestamp="1601294225290" />
     <state width="1398" height="331" key="GridCell.Tab.0.bottom/0.23.1440.822@0.23.1440.822" timestamp="1601278602462" />
-    <state width="1398" height="238" key="GridCell.Tab.0.center" timestamp="1601379991186">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="699" height="194" key="GridCell.Tab.0.center" timestamp="1602320303297">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
-    <state width="1398" height="238" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1601379991186" />
+    <state width="1083" height="288" key="GridCell.Tab.0.center/0.23.1440.801@0.23.1440.801" timestamp="1602235601272" />
+    <state width="1083" height="141" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1602234490556" />
     <state width="1398" height="268" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1601350290708" />
     <state width="1398" height="255" key="GridCell.Tab.0.center/0.23.1440.808@0.23.1440.808" timestamp="1601374696249" />
     <state width="1398" height="187" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1601372705330" />
-    <state width="1398" height="194" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1601362828675" />
+    <state width="699" height="194" key="GridCell.Tab.0.center/0.23.1440.812@0.23.1440.812" timestamp="1602320303297" />
     <state width="1398" height="233" key="GridCell.Tab.0.center/0.23.1440.814@0.23.1440.814" timestamp="1601296934612" />
     <state width="1398" height="123" key="GridCell.Tab.0.center/0.23.1440.816@0.23.1440.816" timestamp="1601287483204" />
     <state width="1398" height="221" key="GridCell.Tab.0.center/0.23.1440.821@0.23.1440.821" timestamp="1601294225289" />
     <state width="1398" height="331" key="GridCell.Tab.0.center/0.23.1440.822@0.23.1440.822" timestamp="1601278602462" />
-    <state width="1398" height="238" key="GridCell.Tab.0.left" timestamp="1601379991186">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="699" height="194" key="GridCell.Tab.0.left" timestamp="1602320303297">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
-    <state width="1398" height="238" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1601379991186" />
+    <state width="1083" height="288" key="GridCell.Tab.0.left/0.23.1440.801@0.23.1440.801" timestamp="1602235601271" />
+    <state width="1083" height="141" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1602234490555" />
     <state width="1398" height="268" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1601350290707" />
     <state width="1398" height="255" key="GridCell.Tab.0.left/0.23.1440.808@0.23.1440.808" timestamp="1601374696248" />
     <state width="1398" height="187" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1601372705330" />
-    <state width="1398" height="194" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1601362828675" />
+    <state width="699" height="194" key="GridCell.Tab.0.left/0.23.1440.812@0.23.1440.812" timestamp="1602320303297" />
     <state width="1398" height="233" key="GridCell.Tab.0.left/0.23.1440.814@0.23.1440.814" timestamp="1601296934611" />
     <state width="1398" height="123" key="GridCell.Tab.0.left/0.23.1440.816@0.23.1440.816" timestamp="1601287483204" />
     <state width="1398" height="221" key="GridCell.Tab.0.left/0.23.1440.821@0.23.1440.821" timestamp="1601294225289" />
     <state width="1398" height="331" key="GridCell.Tab.0.left/0.23.1440.822@0.23.1440.822" timestamp="1601278602461" />
-    <state width="1398" height="238" key="GridCell.Tab.0.right" timestamp="1601379991187">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="699" height="194" key="GridCell.Tab.0.right" timestamp="1602320303298">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
-    <state width="1398" height="238" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1601379991187" />
+    <state width="1083" height="288" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1602235601272" />
+    <state width="1083" height="141" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1602234490557" />
     <state width="1398" height="268" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1601350290708" />
     <state width="1398" height="255" key="GridCell.Tab.0.right/0.23.1440.808@0.23.1440.808" timestamp="1601374696249" />
     <state width="1398" height="187" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1601372705331" />
-    <state width="1398" height="194" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1601362828676" />
+    <state width="699" height="194" key="GridCell.Tab.0.right/0.23.1440.812@0.23.1440.812" timestamp="1602320303298" />
     <state width="1398" height="233" key="GridCell.Tab.0.right/0.23.1440.814@0.23.1440.814" timestamp="1601296934612" />
     <state width="1398" height="123" key="GridCell.Tab.0.right/0.23.1440.816@0.23.1440.816" timestamp="1601287483204" />
     <state width="1398" height="221" key="GridCell.Tab.0.right/0.23.1440.821@0.23.1440.821" timestamp="1601294225290" />
     <state width="1398" height="331" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1601278602462" />
-    <state width="1398" height="238" key="GridCell.Tab.1.bottom" timestamp="1601379991188">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="1083" height="131" key="GridCell.Tab.1.bottom" timestamp="1602320303280">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
-    <state width="1398" height="238" key="GridCell.Tab.1.bottom/0.23.1440.804@0.23.1440.804" timestamp="1601379991188" />
+    <state width="1083" height="200" key="GridCell.Tab.1.bottom/0.23.1440.801@0.23.1440.801" timestamp="1602235601144" />
+    <state width="1083" height="141" key="GridCell.Tab.1.bottom/0.23.1440.804@0.23.1440.804" timestamp="1602234490559" />
     <state width="1398" height="226" key="GridCell.Tab.1.bottom/0.23.1440.806@0.23.1440.806" timestamp="1601350201282" />
     <state width="1398" height="255" key="GridCell.Tab.1.bottom/0.23.1440.808@0.23.1440.808" timestamp="1601374696174" />
     <state width="1398" height="187" key="GridCell.Tab.1.bottom/0.23.1440.811@0.23.1440.811" timestamp="1601372705252" />
-    <state width="1398" height="183" key="GridCell.Tab.1.bottom/0.23.1440.812@0.23.1440.812" timestamp="1601362794239" />
+    <state width="1083" height="131" key="GridCell.Tab.1.bottom/0.23.1440.812@0.23.1440.812" timestamp="1602320303280" />
     <state width="1398" height="233" key="GridCell.Tab.1.bottom/0.23.1440.814@0.23.1440.814" timestamp="1601296934533" />
     <state width="1398" height="123" key="GridCell.Tab.1.bottom/0.23.1440.816@0.23.1440.816" timestamp="1601287483056" />
     <state width="1398" height="221" key="GridCell.Tab.1.bottom/0.23.1440.821@0.23.1440.821" timestamp="1601294225208" />
     <state width="1398" height="175" key="GridCell.Tab.1.bottom/0.23.1440.822@0.23.1440.822" timestamp="1601278599328" />
-    <state width="1398" height="238" key="GridCell.Tab.1.center" timestamp="1601379991187">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="1083" height="131" key="GridCell.Tab.1.center" timestamp="1602320303279">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
-    <state width="1398" height="238" key="GridCell.Tab.1.center/0.23.1440.804@0.23.1440.804" timestamp="1601379991187" />
+    <state width="1083" height="200" key="GridCell.Tab.1.center/0.23.1440.801@0.23.1440.801" timestamp="1602235601143" />
+    <state width="1083" height="141" key="GridCell.Tab.1.center/0.23.1440.804@0.23.1440.804" timestamp="1602234490558" />
     <state width="1398" height="226" key="GridCell.Tab.1.center/0.23.1440.806@0.23.1440.806" timestamp="1601350201282" />
     <state width="1398" height="255" key="GridCell.Tab.1.center/0.23.1440.808@0.23.1440.808" timestamp="1601374696173" />
     <state width="1398" height="187" key="GridCell.Tab.1.center/0.23.1440.811@0.23.1440.811" timestamp="1601372705251" />
-    <state width="1398" height="183" key="GridCell.Tab.1.center/0.23.1440.812@0.23.1440.812" timestamp="1601362794239" />
+    <state width="1083" height="131" key="GridCell.Tab.1.center/0.23.1440.812@0.23.1440.812" timestamp="1602320303279" />
     <state width="1398" height="233" key="GridCell.Tab.1.center/0.23.1440.814@0.23.1440.814" timestamp="1601296934532" />
     <state width="1398" height="123" key="GridCell.Tab.1.center/0.23.1440.816@0.23.1440.816" timestamp="1601287483055" />
     <state width="1398" height="221" key="GridCell.Tab.1.center/0.23.1440.821@0.23.1440.821" timestamp="1601294225208" />
     <state width="1398" height="175" key="GridCell.Tab.1.center/0.23.1440.822@0.23.1440.822" timestamp="1601278599327" />
-    <state width="1398" height="238" key="GridCell.Tab.1.left" timestamp="1601379991187">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="1083" height="131" key="GridCell.Tab.1.left" timestamp="1602320303279">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
-    <state width="1398" height="238" key="GridCell.Tab.1.left/0.23.1440.804@0.23.1440.804" timestamp="1601379991187" />
+    <state width="1083" height="200" key="GridCell.Tab.1.left/0.23.1440.801@0.23.1440.801" timestamp="1602235601143" />
+    <state width="1083" height="141" key="GridCell.Tab.1.left/0.23.1440.804@0.23.1440.804" timestamp="1602234490558" />
     <state width="1398" height="226" key="GridCell.Tab.1.left/0.23.1440.806@0.23.1440.806" timestamp="1601350201281" />
     <state width="1398" height="255" key="GridCell.Tab.1.left/0.23.1440.808@0.23.1440.808" timestamp="1601374696172" />
     <state width="1398" height="187" key="GridCell.Tab.1.left/0.23.1440.811@0.23.1440.811" timestamp="1601372705251" />
-    <state width="1398" height="183" key="GridCell.Tab.1.left/0.23.1440.812@0.23.1440.812" timestamp="1601362794239" />
+    <state width="1083" height="131" key="GridCell.Tab.1.left/0.23.1440.812@0.23.1440.812" timestamp="1602320303279" />
     <state width="1398" height="233" key="GridCell.Tab.1.left/0.23.1440.814@0.23.1440.814" timestamp="1601296934532" />
     <state width="1398" height="123" key="GridCell.Tab.1.left/0.23.1440.816@0.23.1440.816" timestamp="1601287483055" />
     <state width="1398" height="221" key="GridCell.Tab.1.left/0.23.1440.821@0.23.1440.821" timestamp="1601294225207" />
     <state width="1398" height="175" key="GridCell.Tab.1.left/0.23.1440.822@0.23.1440.822" timestamp="1601278599326" />
-    <state width="1398" height="238" key="GridCell.Tab.1.right" timestamp="1601379991187">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state width="1083" height="131" key="GridCell.Tab.1.right" timestamp="1602320303280">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
-    <state width="1398" height="238" key="GridCell.Tab.1.right/0.23.1440.804@0.23.1440.804" timestamp="1601379991187" />
+    <state width="1083" height="200" key="GridCell.Tab.1.right/0.23.1440.801@0.23.1440.801" timestamp="1602235601144" />
+    <state width="1083" height="141" key="GridCell.Tab.1.right/0.23.1440.804@0.23.1440.804" timestamp="1602234490559" />
     <state width="1398" height="226" key="GridCell.Tab.1.right/0.23.1440.806@0.23.1440.806" timestamp="1601350201282" />
     <state width="1398" height="255" key="GridCell.Tab.1.right/0.23.1440.808@0.23.1440.808" timestamp="1601374696173" />
     <state width="1398" height="187" key="GridCell.Tab.1.right/0.23.1440.811@0.23.1440.811" timestamp="1601372705251" />
-    <state width="1398" height="183" key="GridCell.Tab.1.right/0.23.1440.812@0.23.1440.812" timestamp="1601362794239" />
+    <state width="1083" height="131" key="GridCell.Tab.1.right/0.23.1440.812@0.23.1440.812" timestamp="1602320303280" />
     <state width="1398" height="233" key="GridCell.Tab.1.right/0.23.1440.814@0.23.1440.814" timestamp="1601296934532" />
     <state width="1398" height="123" key="GridCell.Tab.1.right/0.23.1440.816@0.23.1440.816" timestamp="1601287483055" />
     <state width="1398" height="221" key="GridCell.Tab.1.right/0.23.1440.821@0.23.1440.821" timestamp="1601294225208" />
@@ -674,9 +700,10 @@
     <state x="229" y="66" key="SettingsEditor/0.23.1440.804@0.23.1440.804" timestamp="1601379973982" />
     <state x="229" y="67" key="SettingsEditor/0.23.1440.814@0.23.1440.814" timestamp="1601087784106" />
     <state x="229" y="67" key="SettingsEditor/0.23.1440.816@0.23.1440.816" timestamp="1601088207307" />
-    <state x="320" y="165" key="Vcs.Push.Dialog.v2" timestamp="1601380117877">
-      <screen x="0" y="23" width="1440" height="806" />
+    <state x="320" y="164" key="Vcs.Push.Dialog.v2" timestamp="1601388630278">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
+    <state x="320" y="164" key="Vcs.Push.Dialog.v2/0.23.1440.801@0.23.1440.801" timestamp="1601388630278" />
     <state x="320" y="165" key="Vcs.Push.Dialog.v2/0.23.1440.804@0.23.1440.804" timestamp="1601379693967" />
     <state x="320" y="165" key="Vcs.Push.Dialog.v2/0.23.1440.806@0.23.1440.806" timestamp="1601380117877" />
     <state width="720" height="407" key="XDebugger.FullValuePopup" timestamp="1601282844934">
@@ -685,10 +712,15 @@
     <state width="720" height="405" key="XDebugger.FullValuePopup/0.23.1440.814@0.23.1440.814" timestamp="1601086457886" />
     <state width="720" height="407" key="XDebugger.FullValuePopup/0.23.1440.816@0.23.1440.816" timestamp="1601282844934" />
     <state width="720" height="409" key="XDebugger.FullValuePopup/0.23.1440.822@0.23.1440.822" timestamp="1601274225960" />
-    <state x="522" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601379627481">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state x="86" y="123" width="1240" height="601" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603076770997">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state x="86" y="123" width="1240" height="601" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.814@0.23.1440.814" timestamp="1603076770997" />
+    <state x="522" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603091353696">
+      <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="522" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.804@0.23.1440.804" timestamp="1601379627481" />
+    <state x="522" y="349" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.811@0.23.1440.811" timestamp="1603091353696" />
     <state x="430" y="185" width="739" height="494" key="find.popup" timestamp="1601104499272">
       <screen x="0" y="23" width="1440" height="816" />
     </state>
@@ -706,22 +738,22 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/out/douyin-open-api-go/client_test.go</url>
-          <line>1326</line>
+          <line>1385</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/out/douyin-open-api-go/client_test.go</url>
-          <line>1315</line>
+          <line>1374</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/out/douyin-open-api-go/client_test.go</url>
-          <line>1318</line>
+          <line>1377</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/out/douyin-open-api-go/client_test.go</url>
-          <line>1083</line>
+          <line>1113</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
@@ -730,9 +762,13 @@
           <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="DlvErrorBreakpoint" />
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/douyin_open_api$TestCommentEnterprise_in_github_com_xopenapi_douyin_open_api_go.out" NAME="TestCommentEnterprise in github.com/xopenapi/douyin-open-api-go Coverage Results" MODIFIED="1602234383933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/douyin_open_api$TestPublishVideoPart_in_github_com_xopenapi_douyin_open_api_go.out" NAME="TestPublishVideoPart in github.com/xopenapi/douyin-open-api-go Coverage Results" MODIFIED="1601349293640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/douyin_open_api$TestVideoApiClient_in_github_com_xopenapi_douyin_open_api_go.out" NAME="TestVideoApiClient in github.com/xopenapi/douyin-open-api-go Coverage Results" MODIFIED="1601259324238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/douyin_open_api$TestPost_in_github_com_xopenapi_douyin_open_api_go.out" NAME="TestPost in github.com/xopenapi/douyin-open-api-go Coverage Results" MODIFIED="1601363767782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
