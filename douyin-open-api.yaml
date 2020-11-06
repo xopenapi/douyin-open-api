@@ -2711,6 +2711,7 @@ paths:
           required: true
         - in: body
           name: body
+          required: true
           schema:
             $ref: "#/definitions/EnterpriseLeadsTagCreateReq"
       responses:
@@ -2742,6 +2743,7 @@ paths:
           required: true
         - in: body
           name: body
+          required: true
           schema:
             $ref: "#/definitions/EnterpriseLeadsTagUpdateReq"
       responses:
@@ -2773,6 +2775,7 @@ paths:
           required: true
         - in: body
           name: body
+          required: true
           schema:
             $ref: "#/definitions/EnterpriseLeadsTagDeleteReq"
       responses:
@@ -2804,6 +2807,7 @@ paths:
           required: true
         - in: body
           name: body
+          required: true
           schema:
             $ref: "#/definitions/EnterpriseLeadsTagUserUpdateReq"
       responses:
@@ -2835,6 +2839,7 @@ paths:
           required: true
         - in: body
           name: body
+          required: true
           schema:
             $ref: "#/definitions/EnterpriseImPersonCreateReq"
       responses:
@@ -2866,6 +2871,7 @@ paths:
           required: true
         - in: body
           name: body
+          required: true
           schema:
             $ref: "#/definitions/EnterpriseImPersonDeleteReq"
       responses:
@@ -2936,6 +2942,7 @@ paths:
           required: true
         - in: body
           name: body
+          required: true
           schema:
             $ref: "#/definitions/EnterpriseImPersonConversationCreateReq"
       responses:
@@ -2967,6 +2974,7 @@ paths:
           required: true
         - in: body
           name: body
+          required: true
           schema:
             $ref: "#/definitions/EnterpriseImPersonConversationDeleteReq"
       responses:
@@ -4239,10 +4247,7 @@ paths:
         - in: formData
           name: media
           required: true
-          type: array
-          items:
-            type: string
-            format: byte
+          type: file
       responses:
         "200":
           description: successful operation
@@ -4273,10 +4278,7 @@ paths:
         - in: formData
           name: media
           required: true
-          type: array
-          items:
-            type: string
-            format: byte
+          type: file
       responses:
         "200":
           description: successful operation
@@ -8231,7 +8233,8 @@ definitions:
               type: object
               properties:
                 age:
-                  type: string
+                  type: integer
+                  format: int64
                 avatar:
                   type: string
                 city:
@@ -8258,7 +8261,8 @@ definitions:
                     type: object
                     properties:
                       tag_id:
-                        type: string
+                        type: integer
+                        format: int64
                       tag_name:
                         type: string
       extra:
@@ -8301,7 +8305,8 @@ definitions:
             type: string
             description: 错误码描述
           age:
-            type: string
+            type: integer
+            format: int64
           avatar:
             type: string
           city:
@@ -8328,7 +8333,8 @@ definitions:
               type: object
               properties:
                 tag_id:
-                  type: string
+                  type: integer
+                  format: int64
                 tag_name:
                   type: string
       message:
@@ -8372,8 +8378,7 @@ definitions:
             type: string
             description: 错误码描述
           cursor:
-            type: integer
-            format: int64
+            type: string
           has_more:
             type: boolean
           list:
@@ -8382,13 +8387,16 @@ definitions:
               type: object
               properties:
                 action_flag:
-                  type: string
+                  type: integer
+                  format: int64
                 action_source:
                   type: string
                 action_type:
-                  type: string
+                  type: integer
+                  format: int64
                 create_time:
-                  type: string
+                  type: integer
+                  format: int64
                 user_id:
                   type: string
       extra:
@@ -8440,7 +8448,8 @@ definitions:
               type: object
               properties:
                 tag_id:
-                  type: string
+                  type: integer
+                  format: int64
                 tag_name:
                   type: string
       extra:
