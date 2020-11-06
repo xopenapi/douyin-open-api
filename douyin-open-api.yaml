@@ -765,7 +765,7 @@ paths:
           name: need_callback
           type: boolean
           description: 如果需要知道视频分享成功的结果，need_callback设置为true
-          required: false
+          required: true
         - in: query
           name: source_style_id
           type: string
@@ -11834,17 +11834,19 @@ definitions:
           cursor:
             type: integer
             format: int64
-          media:
-            type: object
-            properties:
-              media_id:
-                type: string
-              status:
-                type: string
-              url_list:
-                type: array
-                items:
+          medias:
+            type: array
+            items:
+              type: object
+              properties:
+                media_id:
                   type: string
+                status:
+                  type: string
+                url_list:
+                  type: array
+                  items:
+                    type: string
       extra:
         type: object
         properties:
